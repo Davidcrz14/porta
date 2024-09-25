@@ -238,10 +238,10 @@
             <button class="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-red-500 focus:outline-none focus:ring-2 focus:ring-purple-400" data-value="purple-red"></button>
           </div>
           <ul class="desktop-menu hidden md:flex space-x-5">
-            <li><a href="#about" class="hover:text-purple-300 transition duration-300">Sobre mí</a></li>
-            <li><a href="#education" class="hover:text-purple-300 transition duration-300">Educación</a></li>
-            <li><a href="#skills" class="hover:text-purple-300 transition duration-300">Habilidades</a></li>
-            <li><a href="#projects" class="hover:text-purple-300 transition duration-300">Proyectos</a></li>
+            <li><a href="#about" class="hover:text-purple-300 transition duration-300"><i class="fas fa-user-circle mr-2"></i>Sobre mí</a></li>
+            <li><a href="#education" class="hover:text-purple-300 transition duration-300"><i class="fas fa-graduation-cap mr-2"></i>Educación</a></li>
+            <li><a href="#skills" class="hover:text-purple-300 transition duration-300"><i class="fas fa-cogs mr-2"></i>Habilidades</a></li>
+            <li><a href="#projects" class="hover:text-purple-300 transition duration-300"><i class="fas fa-project-diagram mr-2"></i>Proyectos</a></li>
           </ul>
         </div>
       </div>
@@ -264,7 +264,9 @@
     <!-- About Section -->
     <section id="about" class="py-20">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-shadow">Sobre mí</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-shadow">
+          <i class="fas fa-user-circle mr-2"></i>Sobre mí
+        </h2>
         <div class="flex flex-wrap items-center">
           <div class="w-full md:w-1/2 mb-8 md:mb-0 slide-in-left">
             <img src="./img/sho.jpg" alt="Profile Picture" class="rounded-full mx-auto h-48 w-48 md:h-64 md:w-64 object-cover shadow-lg" />
@@ -325,22 +327,22 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div class="card p-4 md:p-6">
             <h3 class="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Front-end</h3>
-            <ul class="list-disc list-inside space-y-1 md:space-y-2 text-sm md:text-base">
-              <li>HTML/CSS</li>
-              <li>JavaScript</li>
-              <li>React</li>
+            <ul class="list-none space-y-1 md:space-y-2 text-sm md:text-base">
+              <li><i class="fab fa-html5 mr-2"></i><i class="fab fa-css3-alt mr-2"></i>HTML/CSS</li>
+              <li><i class="fab fa-js-square mr-2"></i>JavaScript</li>
+              <li><i class="fab fa-react mr-2"></i>React</li>
             </ul>
           </div>
           <div class="card p-4 md:p-6">
             <h3 class="text-xl md:text-2xl font-semibold mb-3 md:mb-4">Back-end & Otros</h3>
-            <ul class="list-disc list-inside space-y-1 md:space-y-2 text-sm md:text-base">
-              <li>Python</li>
-              <li>C & C#</li>
-              <li>SQL</li>
-              <li>Tailwind & Bootstrap</li>
-              <li>Kotlin</li>
-              <li>PHP</li>
-              <li>MySQL</li>
+            <ul class="list-none space-y-1 md:space-y-2 text-sm md:text-base">
+              <li><i class="fab fa-python mr-2"></i>Python</li>
+              <li><i class="fas fa-code mr-2"></i>C & C#</li>
+              <li><i class="fas fa-database mr-2"></i>SQL</li>
+              <li><i class="fab fa-bootstrap mr-2"></i>Tailwind & Bootstrap</li>
+              <li><i class="fab fa-android mr-2"></i>Kotlin</li>
+              <li><i class="fab fa-php mr-2"></i>PHP</li>
+              <li><i class="fas fa-database mr-2"></i>MySQL</li>
             </ul>
           </div>
         </div>
@@ -356,42 +358,42 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2">FondoDv</h3>
+            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-desktop mr-2"></i>FondoDv</h3>
             <p class="mb-4 text-sm md:text-base">Programa para Windows realizado con C# y Windows Form + .NET, que permite al usuario cambiar el fondo de su pantalla de una manera más dinámica.</p>
             <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
           </div>
           <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2">Red Social</h3>
+            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-users mr-2"></i>Red Social</h3>
             <p class="mb-4 text-sm md:text-base">Una red social de estilo foro que permite a los usuarios interactuar y compartir contenido. Diseñada para ofrecer una experiencia de usuario intuitiva y personalizada.</p>
             <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
           </div>
           <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2">BotD</h3>
+            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fab fa-discord mr-2"></i>BotD</h3>
             <p class="mb-4 text-sm md:text-base">BotD es un bot de Discord diseñado para mejorar la experiencia del usuario en servidores de Discord mediante una serie de funcionalidades útiles y divertidas. Está construido utilizando la biblioteca discord.js.</p>
             <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
           </div>
           <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2">DavLoad</h3>
+            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fab fa-youtube mr-2"></i>DavLoad</h3>
             <p class="mb-4 text-sm md:text-base">Proyecto en Python para descargar videos de YouTube como audio o video, con una interfaz intuitiva para el usuario.</p>
             <a href="https://github.com/Davidcrz14/DavLoad" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver en GitHub <i class="fas fa-arrow-right ml-1"></i></a>
           </div>
           <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2">Analizador de Pseudocódigo</h3>
+            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-code mr-2"></i>Analizador de Pseudocódigo</h3>
             <p class="mb-4 text-sm md:text-base">Analizador de pseudocódigo con IA utilizando el modelo de Gemini de Google.</p>
             <a href="https://davgenerator.vercel.app/" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver en GitHub <i class="fas fa-arrow-right ml-1"></i></a>
           </div>
           <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2">QR Creator</h3>
+            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-qrcode mr-2"></i>QR Creator</h3>
             <p class="mb-4 text-sm md:text-base">Creador de códigos QR a partir de texto utilizando Python.</p>
             <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
           </div>
           <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2">Temporizador</h3>
+            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-clock mr-2"></i>Temporizador</h3>
             <p class="mb-4 text-sm md:text-base">Temporizador en Python con una interfaz gráfica que emite un sonido al finalizar el lapso de tiempo marcado por el usuario.</p>
             <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
           </div>
           <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2">Foro Simple</h3>
+            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-comments mr-2"></i>Foro Simple</h3>
             <p class="mb-4 text-sm md:text-base">Foro con HTML, CSS, JavaScript y Python como servidor, base de datos con SQLite.</p>
             <a href="https://github.com/Davidcrz14/Foro" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver en GitHub <i class="fas fa-arrow-right ml-1"></i></a>
           </div>
@@ -403,7 +405,7 @@
     <footer class="bg-gradient-to-r from-purple-600 to-indigo-800 py-12">
       <div class="container mx-auto px-4 text-center">
         <div class="flex flex-col items-center justify-center space-y-4">
-          <img src="./img/du.gif" alt="Logo DavC" class="w-16 h-16 rounded-full mb-2">
+          <img src="./img/du.gif" alt="Logo DavC" class="w-20 h-20 rounded-full mb-4 border-4 border-white shadow-lg">
           <p class="text-xl font-semibold text-white">&copy; 2024 DavC</p>
           <p class="text-sm text-gray-300">Desarrollador Web Junior | Sin Nada que Hacer</p>
           <div class="flex space-x-4 mt-4">
@@ -423,6 +425,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
+      // Configuración de particles.js
       particlesJS("particles-js", {
         particles: {
           number: { value: 80, density: { enable: true, value_area: 800 } },
@@ -448,6 +451,7 @@
         retina_detect: true
       });
 
+      // Funciones auxiliares
       const debounce = (func, wait = 20, immediate = true) => {
         let timeout;
         return function() {
@@ -473,6 +477,7 @@
         return elementTop > (window.innerHeight || document.documentElement.clientHeight);
       };
 
+      // Funciones principales
       const updateTitle = () => {
         const sections = document.querySelectorAll('section');
         const scrollPosition = window.scrollY;
@@ -502,7 +507,9 @@
         });
       };
 
+      // Event Listeners
       document.addEventListener("DOMContentLoaded", () => {
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           anchor.addEventListener("click", function(e) {
             e.preventDefault();
