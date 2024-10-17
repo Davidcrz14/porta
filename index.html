@@ -350,56 +350,150 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="flex items-center justify-center mb-12">
-           <img src="img/flecha.gif" alt="Flecha" class="h-8 w-8" style="margin-right: 10px;">
-          <h2 class="text-3xl md:text-4xl font-bold text-center text-shadow mr-4">Mis Proyectos</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-desktop mr-2"></i>FondoDv</h3>
-            <p class="mb-4 text-sm md:text-base">Programa para Windows realizado con C# y Windows Form + .NET, que permite al usuario cambiar el fondo de su pantalla de una manera más dinámica.</p>
-            <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
+
+    <!-- Sección de Proyectos Mejorada -->
+<section id="projects" class="py-20">
+  <div class="container mx-auto px-4">
+    <div class="flex items-center justify-center mb-12">
+      <i class="fas fa-arrow-up text-5xl text-purple-300 animate-bounce"></i>
+      <h2 class="text-4xl md:text-5xl font-bold text-center text-shadow text-purple-300">Mis Proyectos</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Proyecto 1: FondoDv -->
+      <div class="project-card bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <i class="fas fa-desktop text-6xl text-purple-300 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 text-purple-300">FondoDv</h3>
+          <p class="text-gray-300 mb-4">Programa para Windows que permite cambiar el fondo de pantalla de manera dinámica.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">C#</span>
+            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Windows Forms</span>
+            <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">.NET</span>
           </div>
-          <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-users mr-2"></i>Red Social</h3>
-            <p class="mb-4 text-sm md:text-base">Una red social de estilo foro que permite a los usuarios interactuar y compartir contenido. Diseñada para ofrecer una experiencia de usuario intuitiva y personalizada.</p>
-            <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
-          </div>
-          <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fab fa-discord mr-2"></i>BotD</h3>
-            <p class="mb-4 text-sm md:text-base">BotD es un bot de Discord diseñado para mejorar la experiencia del usuario en servidores de Discord mediante una serie de funcionalidades útiles y divertidas. Está construido utilizando la biblioteca discord.js.</p>
-            <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
-          </div>
-          <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fab fa-youtube mr-2"></i>DavLoad</h3>
-            <p class="mb-4 text-sm md:text-base">Proyecto en Python para descargar videos de YouTube como audio o video, con una interfaz intuitiva para el usuario.</p>
-            <a href="https://github.com/Davidcrz14/DavLoad" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver en GitHub <i class="fas fa-arrow-right ml-1"></i></a>
-          </div>
-          <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-code mr-2"></i>Analizador de Pseudocódigo</h3>
-            <p class="mb-4 text-sm md:text-base">Analizador de pseudocódigo con IA utilizando el modelo de Gemini de Google.</p>
-            <a href="https://davgenerator.vercel.app/" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver en GitHub <i class="fas fa-arrow-right ml-1"></i></a>
-          </div>
-          <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-qrcode mr-2"></i>QR Creator</h3>
-            <p class="mb-4 text-sm md:text-base">Creador de códigos QR a partir de texto utilizando Python.</p>
-            <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
-          </div>
-          <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-clock mr-2"></i>Temporizador</h3>
-            <p class="mb-4 text-sm md:text-base">Temporizador en Python con una interfaz gráfica que emite un sonido al finalizar el lapso de tiempo marcado por el usuario.</p>
-            <a href="#" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver más <i class="fas fa-arrow-right ml-1"></i></a>
-          </div>
-          <div class="project-card card p-6">
-            <h3 class="text-lg md:text-xl font-semibold mb-2"><i class="fas fa-comments mr-2"></i>Foro Simple</h3>
-            <p class="mb-4 text-sm md:text-base">Foro con HTML, CSS, JavaScript y Python como servidor, base de datos con SQLite.</p>
-            <a href="https://github.com/Davidcrz14/Foro" class="text-purple-300 hover:text-purple-400 transition duration-300">Ver en GitHub <i class="fas fa-arrow-right ml-1"></i></a>
-          </div>
+          <a href="#" class="inline-block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
+            Ver Proyecto <i class="fas fa-arrow-right ml-2"></i>
+          </a>
         </div>
       </div>
-    </section>
+
+      <!-- Proyecto 2: Red Social -->
+      <div class="project-card bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <i class="fas fa-users text-6xl text-purple-300 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 text-purple-300">Red Social</h3>
+          <p class="text-gray-300 mb-4">Plataforma de foro que permite a los usuarios interactuar y compartir contenido.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded">JavaScript</span>
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">React</span>
+            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">Node.js</span>
+          </div>
+          <a href="#" class="inline-block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
+            Explorar Demo <i class="fas fa-external-link-alt ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Proyecto 3: BotD -->
+      <div class="project-card bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <i class="fab fa-discord text-6xl text-purple-300 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 text-purple-300">BotD</h3>
+          <p class="text-gray-300 mb-4">Bot de Discord con funcionalidades útiles y divertidas para mejorar la experiencia del servidor.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded">JavaScript</span>
+            <span class="bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded">discord.js</span>
+          </div>
+          <a href="#" class="inline-block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
+            Ver en GitHub <i class="fab fa-github ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Proyecto 4: DavLoad -->
+      <div class="project-card bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <i class="fab fa-youtube text-6xl text-purple-300 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 text-purple-300">DavLoad</h3>
+          <p class="text-gray-300 mb-4">Aplicación en Python para descargar videos de YouTube como audio o video.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">Python</span>
+            <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">PyQt</span>
+          </div>
+          <a href="https://github.com/Davidcrz14/DavLoad" class="inline-block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
+            Ver en GitHub <i class="fab fa-github ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Proyecto 5: Analizador de Pseudocódigo -->
+      <div class="project-card bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <i class="fas fa-code text-6xl text-purple-300 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 text-purple-300">Analizador de Pseudocódigo</h3>
+          <p class="text-gray-300 mb-4">Analizador de pseudocódigo con IA utilizando el modelo Gemini de Google.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">Python</span>
+            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">IA</span>
+          </div>
+          <a href="https://davgenerator.vercel.app/" class="inline-block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
+            Visitar Sitio <i class="fas fa-external-link-alt ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Proyecto 6: QR Creator -->
+      <div class="project-card bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <i class="fas fa-qrcode text-6xl text-purple-300 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 text-purple-300">QR Creator</h3>
+          <p class="text-gray-300 mb-4">Generador de códigos QR a partir de texto utilizando Python.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">Python</span>
+            <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded">qrcode</span>
+          </div>
+          <a href="#" class="inline-block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
+            Ver Detalles <i class="fas fa-info-circle ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Proyecto 7: Temporizador -->
+      <div class="project-card bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <i class="fas fa-clock text-6xl text-purple-300 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 text-purple-300">Temporizador</h3>
+          <p class="text-gray-300 mb-4">Temporizador en Python con interfaz gráfica que emite un sonido al finalizar el tiempo marcado.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">Python</span>
+            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">GUI</span>
+          </div>
+          <a href="#" class="inline-block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
+            Ver Detalles <i class="fas fa-info-circle ml-2"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Proyecto 8: Foro Simple -->
+      <div class="project-card bg-gray-800 bg-opacity-50 rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105">
+        <div class="p-6">
+          <i class="fas fa-comments text-6xl text-purple-300 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 text-purple-300">Foro Simple</h3>
+          <p class="text-gray-300 mb-4">Foro desarrollado con HTML, CSS, JavaScript y Python como servidor, utilizando SQLite como base de datos.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">HTML/CSS</span>
+            <span class="bg-yellow-500 text-white text-xs font-bold px-2 py-1 rounded">JavaScript</span>
+            <span class="bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">Python</span>
+            <span class="bg-green-500 text-white text-xs font-bold px-2 py-1 rounded">SQLite</span>
+          </div>
+          <a href="https://github.com/Davidcrz14/Foro" class="inline-block bg-purple-600 text-white py-2 px-4 rounded hover:bg-purple-700 transition duration-300">
+            Ver en GitHub <i class="fab fa-github ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-gradient-to-r from-purple-600 to-indigo-800 py-12">
