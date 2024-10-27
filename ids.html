@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        #canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .contenedor-principal {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+        .linea-decorativa {
+            height: 6px;
+            width: 0;
+            background: linear-gradient(90deg, #00f260, #0575e6, #ff00ff, #00f260, #ff00ff, #0575e6);
+            background-size: 600% 600%;
+            animation: gradientBG 10s ease infinite, expandWidth 3s ease-out forwards, pulsar 2s infinite;
+            margin: 2rem auto;
+            border-radius: 6px;
+            box-shadow: 0 0 30px rgba(0, 242, 96, 0.9);
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes expandWidth {
+            to { width: 90%; }
+        }
+        @keyframes pulsar {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .texto-animado {
+            font-size: 4rem;
+            font-weight: bold;
+            opacity: 0;
+            transform: translateY(20px);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+            background: linear-gradient(45deg, #00f260, #0575e6, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .boton-interactivo {
+            background: linear-gradient(45deg, #00f260, #0575e6, #ff00ff);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        .boton-interactivo:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+        }
+        #warp-effect {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, white 10%, rgba(255,255,255,0.8) 20%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0.4) 40%, rgba(255,255,255,0.2) 50%, transparent 60%);
+            border-radius: 50%;
+            opacity: 0;
+            z-index: 100;
+            pointer-events: none;
+        }
+        #tunnel-effect {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.8) 80%, black 100%);
+            opacity: 0;
+            z-index: 99;
+            pointer-events: none;
+        }
+    </style>
+    <title>Experiencia Visual Interestelar Mejorada</title>
+</head>
+<body class="bg-black">
+    <canvas id="canvas"></canvas>
+    <div id="warp-effect"></div>
+    <div id="tunnel-effect"></div>
+    <div class="contenedor-principal">
+        <div class="linea-decorativa animate__animated animate__fadeIn"></div>
+        <h1 class="texto-animado">¡Viaje Interestelar Épico!</h1>
+        <button class="boton-interactivo mt-12">¡Iniciar Aventura Cósmica!</button>
+    </div>
+    <script>
+        // Configuración de Three.js mejorada
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+
+        // Crear partículas para el efecto de túnel mejorado
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 200000;
+        const posArray = new Float32Array(particlesCount * 3);
+        const colorArray = new Float32Array(particlesCount * 3);
+
+        for(let i = 0; i < particlesCount * 3; i += 3) {
+            posArray[i] = (Math.random() - 0.5) * 20;
+            posArray[i+1] = (Math.random() - 0.5) * 20;
+            posArray[i+2] = (Math.random() - 0.5) * 20;
+
+            colorArray[i] = Math.random();
+            colorArray[i+1] = Math.random();
+            colorArray[i+2] = Math.random();
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.005,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending
+        });
+
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
+        camera.position.z = 5;
+
+        // Animación de partículas mejorada
+        function animate() {
+            requestAnimationFrame(animate);
+            particlesMesh.rotation.x += 0.0005;
+            particlesMesh.rotation.y += 0.0005;
+            particlesMesh.rotation.z += 0.0005;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Animaciones con GSAP mejoradas
+        gsap.to(".linea-decorativa", {
+            duration: 3,
+            scaleX: 1.5,
+            yoyo: true,
+            repeat: -1,
+            ease: "power2.inOut"
+        });
+
+        gsap.to(".texto-animado", {
+            opacity: 1,
+            y: 0,
+            duration: 2,
+            delay: 1,
+            ease: "elastic.out(1, 0.5)"
+        });
+
+        gsap.to(".boton-interactivo", {
+            opacity: 1,
+            y: 0,
+            duration: 2,
+            delay: 1.5,
+            ease: "elastic.out(1, 0.5)"
+        });
+
+        // Efecto de agujero de gusano mejorado
+        document.querySelector('.boton-interactivo').addEventListener('click', () => {
+            const warpEffect = document.getElementById('warp-effect');
+            const tunnelEffect = document.getElementById('tunnel-effect');
+
+            // Efecto de túnel mejorado
+            gsap.to(tunnelEffect, {
+                opacity: 1,
+                duration: 3,
+                ease: "power3.in"
+            });
+
+            // Efecto de warp mejorado
+            gsap.to(warpEffect, {
+                opacity: 1,
+                scale: 500,
+                duration: 10,
+                ease: "power3.in",
+                onComplete: () => {
+                    gsap.to(warpEffect, {
+                        opacity: 0,
+                        duration: 2,
+                        onComplete: () => {
+                            gsap.set(warpEffect, { scale: 0 });
+                        }
+                    });
+                    gsap.to(tunnelEffect, {
+                        opacity: 0,
+                        duration: 2
+                    });
+                }
+            });
+
+            // Movimiento de cámara mejorado
+            gsap.to(camera.position, {
+                z: -200,
+                duration: 10,
+                ease: "power3.in",
+                onComplete: () => {
+                    gsap.to(camera.position, {
+                        z: 5,
+                        duration: 3,
+                        ease: "power3.out"
+                    });
+                }
+            });
+
+            // Rotación de partículas mejorada
+            gsap.to(particlesMesh.rotation, {
+                x: particlesMesh.rotation.x + Math.PI * 20,
+                y: particlesMesh.rotation.y + Math.PI * 20,
+                z: particlesMesh.rotation.z + Math.PI * 20,
+                duration: 10,
+                ease: "power3.in"
+            });
+
+            // Tamaño de partículas mejorado
+            gsap.to(particlesMaterial, {
+                size: 0.1,
+                duration: 5,
+                yoyo: true,
+                repeat: 1,
+                ease: "power3.inOut"
+            });
+
+            // Efecto de estiramiento mejorado
+            gsap.to(particlesMesh.scale, {
+                z: 30,
+                duration: 5,
+                yoyo: true,
+                repeat: 1,
+                ease: "power3.inOut"
+            });
+
+            // Cambio de color de partículas mejorado
+            gsap.to(particlesMaterial.color, {
+                r: Math.random(),
+                g: Math.random(),
+                b: Math.random(),
+                duration: 5,
+                yoyo: true,
+                repeat: 1,
+                ease: "power3.inOut"
+            });
+        });
+
+        // Efecto de parallax suave mejorado
+        window.addEventListener('mousemove', (event) => {
+            const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            gsap.to(particlesMesh.rotation, {
+                x: mouseY * 0.2,
+                y: mouseX * 0.2,
+                duration: 1,
+                ease: "power2.out"
+            });
+        });
+
+        // Responsive mejorado
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+        });
+    </script>
+</body>
+</html>
