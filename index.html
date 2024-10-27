@@ -255,6 +255,7 @@
           <div id="colorSelector" class="flex space-x-2">
             <button class="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 focus:outline-none focus:ring-2 focus:ring-purple-400" data-value="default"></button>
             <button class="w-6 h-6 rounded-full bg-gradient-to-r from-purple-500 to-red-500 focus:outline-none focus:ring-2 focus:ring-purple-400" data-value="purple-red"></button>
+            <button class="w-6 h-6 rounded-full bg-gradient-to-r from-orange-500 to-black focus:outline-none focus:ring-2 focus:ring-orange-400" data-value="halloween"></button>
           </div>
           <ul class="desktop-menu hidden md:flex space-x-5">
             <li><a href="#about" class="hover:text-purple-300 transition duration-300"><i class="fas fa-user-circle mr-2"></i>Sobre mí</a></li>
@@ -785,15 +786,71 @@
         window.addEventListener('scroll', debounce(updateTitle));
         window.addEventListener("scroll", debounce(handleScrollAnimation));
 
-        // Color selector
+        // Color selector con transición suave
         document.getElementById("colorSelector").addEventListener("click", (e) => {
           if (e.target.tagName === "BUTTON") {
-            const colors = e.target.getAttribute("data-value") === "purple-red"
-              ? { primary: "#8e37d7", secondary: "#d73737" }
-              : { primary: "#667eea", secondary: "#764ba2" };
+            let colors;
+            const value = e.target.getAttribute("data-value");
+            const root = document.documentElement;
+            const currentColors = {
+              primary: getComputedStyle(root).getPropertyValue('--primary-color').trim(),
+              secondary: getComputedStyle(root).getPropertyValue('--secondary-color').trim(),
+              accent: getComputedStyle(root).getPropertyValue('--accent-color').trim(),
+              highlight: getComputedStyle(root).getPropertyValue('--highlight-color').trim()
+            };
 
-            document.documentElement.style.setProperty("--primary-color", colors.primary);
-            document.documentElement.style.setProperty("--secondary-color", colors.secondary);
+            if (value === "purple-red") {
+              colors = {
+                primary: "#8e37d7",
+                secondary: "#d73737",
+                accent: "#8e37d7",
+                highlight: "#d73737"
+              };
+            } else if (value === "halloween") {
+              colors = {
+                primary: "#ff6b00",
+                secondary: "#000000",
+                accent: "#ff8c00",
+                highlight: "#ff4500"
+              };
+            } else {
+              colors = {
+                primary: "#667eea",
+                secondary: "#764ba2",
+                accent: "#6b8dd6",
+                highlight: "#8e37d7"
+              };
+            }
+
+            const interpolateColor = (color1, color2, factor) => {
+              const r1 = parseInt(color1.substr(1,2), 16);
+              const g1 = parseInt(color1.substr(3,2), 16);
+              const b1 = parseInt(color1.substr(5,2), 16);
+              const r2 = parseInt(color2.substr(1,2), 16);
+              const g2 = parseInt(color2.substr(3,2), 16);
+              const b2 = parseInt(color2.substr(5,2), 16);
+
+              const r = Math.round(r1 + (r2 - r1) * factor);
+              const g = Math.round(g1 + (g2 - g1) * factor);
+              const b = Math.round(b1 + (b2 - b1) * factor);
+
+              return `#${r.toString(16).padStart(2,'0')}${g.toString(16).padStart(2,'0')}${b.toString(16).padStart(2,'0')}`;
+            };
+
+            // Animación suave de colores
+            const duration = 500; // duración en ms
+            const steps = 20; // número de pasos
+            const interval = duration / steps;
+
+            for(let i = 0; i <= steps; i++) {
+              setTimeout(() => {
+                const factor = i / steps;
+                root.style.setProperty("--primary-color", interpolateColor(currentColors.primary, colors.primary, factor));
+                root.style.setProperty("--secondary-color", interpolateColor(currentColors.secondary, colors.secondary, factor));
+                root.style.setProperty("--accent-color", interpolateColor(currentColors.accent, colors.accent, factor));
+                root.style.setProperty("--highlight-color", interpolateColor(currentColors.highlight, colors.highlight, factor));
+              }, i * interval);
+            }
           }
         });
 
