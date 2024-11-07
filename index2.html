@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DavC | Desarrollador Jr</title>
@@ -12,15 +13,15 @@
     <meta property="og:description" content="Bienvenido a mi portafolio. Aquí puedes encontrar información sobre mí y mis proyectos de desarrollo web." />
     <meta property="og:url" content="https://davcportafolio.vercel.app" />
     <meta property="og:image" content="https://w.wallhaven.cc/full/o5/wallhaven-o5776l.jpg" />
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- External scripts and styles -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/xd.gif" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
-
+    <!-- Internal styles -->
     <style>
       :root {
         --primary-color: #667eea;
@@ -414,8 +415,17 @@
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+
 }
+
     </style>
+    <!-- Precarga recursos críticos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+
+    <!-- Carga asíncrona de Font Awesome -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
   </head>
   <body class="bg-gradient text-white min-h-screen">
     <!-- Loader -->
@@ -496,149 +506,43 @@
     </section>
 
     <!-- Education Section -->
-<section id="education" class="py-20">
-  <div class="container mx-auto px-4">
-    <div class="flex items-center justify-center mb-12">
-      <img src="img/flecha.gif" alt="Flecha" class="h-8 w-8 animate__animated animate__bounceIn animate__delay-1s mr-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center text-shadow animate__animated animate__fadeInDown">
-        Educación
-        <span class="block text-lg font-normal text-purple-300 mt-2">Mi trayectoria académica</span>
-      </h2>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- CECyTE -->
-      <div class="highlight-card group">
-        <div class="content-primary">
-          <div class="flex justify-between items-start mb-6">
-            <div class="flex items-center">
-              <i class="fas fa-code text-5xl text-purple-400 mr-4"></i>
-              <div>
-                <h3 class="text-2xl font-bold text-purple-300">Técnico en Programación</h3>
-                <p class="text-gray-400 mt-1">CECyTE Oaxaca</p>
-                <p class="text-sm text-purple-300 mt-1">2021 - 2024</p>
-              </div>
-            </div>
-            <span class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-              Completado
-            </span>
-          </div>
-
-          <div class="space-y-4">
-            <div class="bg-purple-900/20 rounded-lg p-4">
-              <h4 class="font-semibold text-purple-300 mb-2">Logro Destacado</h4>
-              <ul class="space-y-2 text-gray-300">
-                <li class="flex items-center">
-                  <i class="fas fa-award text-yellow-400 mr-2"></i>
-                  Mejor desempeño en la carrera
-                </li>
-
-
-
-                </li>
-              </ul>
-            </div>
-
-            <div class="progress-container">
-              <div class="flex justify-between text-sm text-purple-300 mb-2">
-                <span>Promedio del área de Programación</span>
-                <span class="font-bold">9.5/10</span>
-              </div>
-              <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                <div class="progress-bar-animated w-[98%] h-full rounded-full"></div>
-              </div>
-            </div>
-          </div>
+    <section id="education" class="py-20">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-center mb-12">
+           <img src="img/flecha.gif" alt="Flecha" class="h-8 w-8" style="margin-right: 10px;">
+          <h2 class="text-3xl md:text-4xl font-bold text-center text-shadow mr-4">Educación</h2>
         </div>
-
-        <div class="overlay">
-          <div>
-            <h4 class="text-xl font-bold text-white mb-4">Conocimientos Adquiridos</h4>
-            <div class="grid grid-cols-2 gap-3">
-              <span class="tech-tag">C</span>
-              <span class="tech-tag">Java</span>
-              <span class="tech-tag">MySQL</span>
-              <span class="tech-tag">HTML/CSS/PHP</span>
-              <span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">Kotlin</span>
+        <span class="block text-lg font-normal text-purple-300 text-center mb-8">Descubre mi formación académica</span>
+        <div class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
+          <div class="card p-6 w-full md:w-1/2 transition duration-300 transform hover:scale-105 border border-purple-500/20 backdrop-blur-sm">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-code-branch text-purple-400 text-2xl mr-3"></i>
+              <h3 class="text-xl md:text-2xl font-semibold text-purple-300">Técnico en Programación</h3>
             </div>
+            <p class="text-base md:text-lg mb-4">Colegio de Estudios Científicos y Tecnológicos del Estado de Oaxaca</p>
+            <a href="https://www.cecyteo.edu.mx/Nova/Portal/Index" target="_blank" class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center group">
+              Visitar Sitio Web
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
           </div>
-
-          <a href="https://www.cecyteo.edu.mx" target="_blank"
-             class="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center">
-            <i class="fas fa-external-link-alt mr-2"></i>
-            Visitar Sitio Web
-          </a>
+          <div class="card p-6 w-full md:w-1/2 transition duration-300 transform hover:scale-105 border border-purple-500/20 backdrop-blur-sm">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-laptop-code text-purple-400 text-2xl mr-3"></i>
+              <h3 class="text-xl md:text-2xl font-semibold text-purple-300">Ingeniería en Computación (Actual)</h3>
+            </div>
+            <p class="text-base md:text-lg mb-4">Universidad Tecnológica de la Mixteca</p>
+            <a href="https://www.utm.mx/" target="_blank" class="text-purple-300 hover:text-purple-400 transition duration-300 inline-flex items-center group">
+              Visitar Sitio Web
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
-
-      <!-- UTM -->
-      <div class="highlight-card group">
-        <div class="content-primary">
-          <div class="flex justify-between items-start mb-6">
-            <div class="flex items-center">
-              <i class="fas fa-laptop-code text-5xl text-blue-400 mr-4"></i>
-              <div>
-                <h3 class="text-2xl font-bold text-blue-300">Ingeniería en Computación</h3>
-                <p class="text-gray-400 mt-1">Universidad Tecnológica de la Mixteca</p>
-                <p class="text-sm text-blue-300 mt-1">2024 - Presente</p>
-              </div>
-            </div>
-            <span class="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold animate-pulse">
-              En Curso
-            </span>
-          </div>
-
-          <div class="space-y-4">
-            <div class="bg-blue-900/20 rounded-lg p-4">
-              <h4 class="font-semibold text-blue-300 mb-2">Áreas de Enfoque</h4>
-              <ul class="space-y-2 text-gray-300">
-                <li class="flex items-center">
-                  <i class="fas fa-microchip text-blue-400 mr-2"></i>
-                  Desarrollo de Software
-                </li>
-
-              </ul>
-            </div>
-
-            <div class="progress-container">
-              <div class="flex justify-between text-sm text-blue-300 mb-2">
-                <span>Progreso de la Carrera</span>
-                <span class="font-bold">5%</span>
-              </div>
-              <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                <div class="progress-bar-animated w-[5%] h-full rounded-full"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="overlay">
-          <div>
-            <h4 class="text-xl font-bold text-white mb-4">Materias Actuales</h4>
-            <div class="grid grid-cols-1 gap-2">
-              <div class="bg-blue-900/30 p-2 rounded">
-                <span class="text-sm">Programación Orientada a Objetos</span>
-              </div>
-              <div class="bg-blue-900/30 p-2 rounded">
-                <span class="text-sm">Estructuras de Datos</span>
-              </div>
-              <div class="bg-blue-900/30 p-2 rounded">
-                <span class="text-sm">Matemáticas Discretas</span>
-              </div>
-            </div>
-          </div>
-
-          <a href="https://www.utm.mx" target="_blank"
-             class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 flex items-center justify-center">
-            <i class="fas fa-external-link-alt mr-2"></i>
-            Visitar Sitio Web
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
    <!-- Sección de Habilidades -->
 <section id="skills" class="py-16 md:py-24">
@@ -1056,12 +960,14 @@
 <!-- Sección de Destacados -->
 <section id="highlights" class="py-20">
   <div class="container mx-auto px-4">
-    <div class="flex items-center justify-center mb-12">
-      <img src="img/flecha.gif" alt="Flecha" class="h-8 w-8 mr-4 animate__animated animate__bounceIn animate__delay-1s">
-      <h2 class="text-3xl md:text-4xl font-bold text-center text-shadow animate__animated animate__fadeInDown">
-        Proyectos Destacados
-        <span class="block text-lg font-normal text-purple-300 mt-2">Descubre mis ideas y proyectos más innovadores</span>
-      </h2>
+    <div class="text-center mb-12">
+      <div class="flex items-center justify-center">
+        <img src="img/flecha.gif" alt="Flecha" class="h-8 w-8 mr-4 animate__animated animate__bounceIn animate__delay-1s">
+        <h2 class="text-3xl md:text-4xl font-bold text-shadow animate__animated animate__fadeInDown">
+          Proyectos Destacados
+        </h2>
+      </div>
+      <span class="block text-lg font-normal text-purple-300 mt-2">Descubre mis ideas y proyectos más innovadores</span>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1260,25 +1166,27 @@ Asignacion de posibles roles en la empresa              </li>
   </div>
 </section>
 <!-- Fin de la Sección de Destacados -->
-
     <!-- Footer -->
-    <footer class="bg-gradient-to-r from-purple-600 to-indigo-800 py-12">
-      <div class="container mx-auto px-4 text-center">
-        <div class="flex flex-col items-center justify-center space-y-4">
-          <img src="./img/du.gif" alt="Logo DavC" class="w-20 h-20 rounded-full mb-4 border-4 border-white shadow-lg">
-          <p class="text-xl font-semibold text-white">&copy; 2024 DavC</p>
-          <p class="text-sm text-gray-300">Desarrollador Web Junior | Sin Nada que Hacer</p>
-          <div class="flex space-x-4 mt-4">
-            <a href="https://github.com/Davidcrz14" class="text-white hover:text-gray-300 transition-colors duration-300">
-              <i class="fab fa-github text-2xl"></i>
+    <footer class="bg-gradient-to-r from-purple-600 to-indigo-800 py-8">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <div class="flex flex-col items-center text-center">
+          <img src="./img/du.gif" alt="Logo DavC" class="w-20 h-20 rounded-full border-4 border-white shadow-lg hover:scale-110 transition-transform duration-300">
+          <h3 class="text-2xl font-bold text-white mt-4">&copy; 2024 DavC</h3>
+          <p class="text-gray-300 mt-2">Desarrollador Web Junior</p>
+          <p class="text-gray-300 italic">"Sin nada que hacer"</p>
+          <div class="flex items-center justify-center space-x-4 mt-4">
+            <a href="https://github.com/Davidcrz14" class="group">
+              <i class="fab fa-github text-3xl text-white group-hover:text-purple-300 transition-all duration-300 transform group-hover:scale-110"></i>
             </a>
-            <a href="https://www.linkedin.com/in/david-cruz-cruz-406179324/" class="text-white hover:text-gray-300 transition-colors duration-300">
-              <i class="fab fa-linkedin text-2xl"></i>
+            <a href="https://www.linkedin.com/in/david-cruz-cruz-406179324/" class="group">
+              <i class="fab fa-linkedin text-3xl text-white group-hover:text-purple-300 transition-all duration-300 transform group-hover:scale-110"></i>
             </a>
-            <a href="mailto:davccorp@gmail.com" class="text-white hover:text-gray-300 transition-colors duration-300">
-              <i class="far fa-envelope text-2xl"></i>
+            <a href="mailto:davccorp@gmail.com" class="group">
+              <i class="far fa-envelope text-3xl text-white group-hover:text-purple-300 transition-all duration-300 transform group-hover:scale-110"></i>
             </a>
           </div>
+          <hr class="w-1/2 border-t border-gray-300 opacity-30 my-4">
+          <p class="text-gray-300">Desarrollado y diseñado con ❤️ por DavC</p>
         </div>
       </div>
     </footer>
@@ -1288,7 +1196,7 @@ Asignacion de posibles roles en la empresa              </li>
       // Configuración de particles.js
       particlesJS("particles-js", {
         particles: {
-          number: { value: 80, density: { enable: true, value_area: 800 } },
+          number: { value: 50, density: { enable: true, value_area: 800 } },
           color: { value: "#ffffff" },
           shape: { type: "circle", stroke: { width: 0, color: "#000000" } },
           opacity: { value: 0.5, random: false },
@@ -1404,6 +1312,8 @@ Asignacion de posibles roles en la empresa              </li>
             let colors;
             const value = e.target.getAttribute("data-value");
             const root = document.documentElement;
+            const logo = document.querySelector("nav a img");
+            const footerLogo = document.querySelector("footer img"); // Seleccionar logo del footer
             const currentColors = {
               primary: getComputedStyle(root).getPropertyValue('--primary-color').trim(),
               secondary: getComputedStyle(root).getPropertyValue('--secondary-color').trim(),
@@ -1418,13 +1328,27 @@ Asignacion de posibles roles en la empresa              </li>
                 accent: "#8e37d7",
                 highlight: "#d73737"
               };
+              // Cambiar logos con animación
+              logo.style.transform = "rotate(360deg)";
+              footerLogo.style.transform = "rotate(360deg)";
+              setTimeout(() => {
+                logo.src = "img/xd.gif";
+                footerLogo.src = "img/du.gif";
+              }, 150);
             } else if (value === "halloween") {
               colors = {
-                primary: "#ff6b00",
+                primary: "#cc5500",
                 secondary: "#000000",
-                accent: "#ff8c00",
-                highlight: "#ff4500"
+                accent: "#cc7000",
+                highlight: "#cc3600"
               };
+              // Cambiar logos con animación
+              logo.style.transform = "rotate(360deg)";
+              footerLogo.style.transform = "rotate(360deg)";
+              setTimeout(() => {
+                logo.src = "img/hallowen.gif";
+                footerLogo.src = "img/hallowen.gif";
+              }, 150);
             } else {
               colors = {
                 primary: "#667eea",
@@ -1432,7 +1356,22 @@ Asignacion de posibles roles en la empresa              </li>
                 accent: "#6b8dd6",
                 highlight: "#8e37d7"
               };
+              // Cambiar logos con animación
+              logo.style.transform = "rotate(360deg)";
+              footerLogo.style.transform = "rotate(360deg)";
+              setTimeout(() => {
+                logo.src = "img/xd.gif";
+                footerLogo.src = "img/du.gif";
+              }, 150);
             }
+
+            // Resetear la animación de los logos
+            logo.addEventListener('transitionend', () => {
+              logo.style.transform = "rotate(0deg)";
+            });
+            footerLogo.addEventListener('transitionend', () => {
+              footerLogo.style.transform = "rotate(0deg)";
+            });
 
             const interpolateColor = (color1, color2, factor) => {
               const r1 = parseInt(color1.substr(1,2), 16);
@@ -1449,9 +1388,8 @@ Asignacion de posibles roles en la empresa              </li>
               return `#${r.toString(16).padStart(2,'0')}${g.toString(16).padStart(2,'0')}${b.toString(16).padStart(2,'0')}`;
             };
 
-            // Animación suave de colores
-            const duration = 500; // duración en ms
-            const steps = 20; // número de pasos
+            const duration = 500;
+            const steps = 20;
             const interval = duration / steps;
 
             for(let i = 0; i <= steps; i++) {
